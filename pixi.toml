@@ -1,0 +1,38 @@
+[workspace]
+authors = ["jefflee1103 <jefflee1103@gmail.com>"]
+channels = ["conda-forge", "bioconda"]
+channel-priority = "strict"
+name = "bigfish-pypeline"
+platforms = ["osx-arm64", "linux-64", "osx-64", "win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+# big-fish = "0.6.2.*"
+python = "3.9.*"
+numpy = "1.21.6.*"
+scipy = "1.7.3.*"
+scikit-image = "0.19.3.*"
+scikit-learn = "1.0.2.*"
+matplotlib = "3.5.3.*"
+pandas = "1.3.5.*"
+mrc = "0.3.0.*"
+jupyterlab = ">=4.4.5,<5"
+ipykernel = ">=6.30.1,<7"
+tqdm = ">=4.67.1,<5"
+tifffile = ">=2024.6.18,<2025"
+# tensorflow = "2.18.0.*" # conda-forge does not ship tensorflow for win-64
+
+# big-fish stays CONDA on non-Windows only:
+[target.linux-64.dependencies]
+big-fish = "0.6.2.*"
+[target.osx-64.dependencies]
+big-fish = "0.6.2.*"
+[target.osx-arm64.dependencies]
+big-fish = "0.6.2.*"
+
+# Windows: switch to PyPI for the TF chain
+[target.win-64.pypi-dependencies]
+big-fish   = "==0.6.2"
+tensorflow = ">=2.3,<3"   # pick the TF you support on Windows
