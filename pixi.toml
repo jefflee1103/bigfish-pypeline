@@ -22,6 +22,7 @@ jupyterlab = ">=4.4.5,<5"
 ipykernel = ">=6.30.1,<7"
 tqdm = ">=4.67.1,<5"
 tifffile = ">=2024.6.18,<2025"
+cellpose = ">=3.1.1.2,<5"
 # tensorflow = "2.18.0.*" # conda-forge does not ship tensorflow for win-64
 
 # big-fish stays CONDA on non-Windows only:
